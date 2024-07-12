@@ -25,9 +25,10 @@ CREATE TABLE "Category" (
 CREATE TABLE "Todo" (
     "id" SERIAL NOT NULL,
     "description" TEXT NOT NULL,
-    "dueDate" TIMESTAMP(3) NOT NULL,
+    "dueDate" TIMESTAMP(3),
+    "reminder" TIMESTAMP(3),
     "completed" BOOLEAN NOT NULL DEFAULT false,
-    "categoryId" INTEGER NOT NULL,
+    "categoryId" INTEGER,
     "userId" TEXT NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,

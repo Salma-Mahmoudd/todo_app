@@ -29,14 +29,15 @@ model Category {
 }
 
 model Todo {
-  id          Int      @id @default(autoincrement())
+  id          Int       @id @default(autoincrement())
   description String
-  dueDate     DateTime
-  completed   Boolean  @default(false)
-  categoryId  Int
+  dueDate     DateTime?
+  reminder    DateTime?
+  completed   Boolean   @default(false)
+  categoryId  Int?
   userId      String
-  category    Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
-  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  category    Category? @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
 }

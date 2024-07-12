@@ -1,0 +1,109 @@
+// Register user
+POST http://localhost:3000/register
+Content-Type: application/json
+
+{
+    "email": "salma@gmail.com",
+    "name": "salma",
+    "password": "1234"
+}
+
+
+###
+// create category
+POST http://localhost:3000/category/
+Content-Type: application/json
+
+{
+    "name": "",
+    "userId": "93992a69-8836-4901-ba45-a1aea43bb1e8"
+}
+
+
+
+###
+// get all categories
+GET http://localhost:3000/category/
+Content-Type: application/json
+
+{
+    "userId": "93992a69-8836-4901-ba45-a1aea43bb1e8"
+}
+
+
+
+###
+// update category
+PUT http://localhost:3000/category/2
+Content-Type: application/json
+
+{
+    "newName": "jk"
+}
+
+
+###
+// delete category
+DELETE http://localhost:3000/category/2
+Content-Type: application/json
+
+
+
+
+
+
+
+
+/////////////////////////////////////////////////
+
+
+
+
+
+###
+// create todo
+POST http://localhost:3000/todo/
+Content-Type: application/json
+
+{
+    "description": "hello my .. todo!",
+    "reminder": "2025-12-12 12:12:12",
+    "categoryId": "1",
+    "dueDate": "2025-12-12",
+    "userId": "93992a69-8836-4901-ba45-a1aea43bb1e8"
+}
+
+
+
+###
+// get all todo
+GET http://localhost:3000/todo/
+Content-Type: application/json
+
+{
+    "userId": "93992a69-8836-4901-ba45-a1aea43bb1e8"
+}
+
+
+###
+// get all todo of category
+GET http://localhost:3000/todo/3
+Content-Type: application/json
+
+
+
+###
+// update todo
+PUT http://localhost:3000/todo/13
+Content-Type: application/json
+
+{
+    "categoryId": 1
+}
+
+
+###
+// delete todo
+DELETE http://localhost:3000/todo/12
+Content-Type: application/json
+
