@@ -10,13 +10,28 @@ Content-Type: application/json
 
 
 ###
+// login user
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "email": "salma@gmail.com",
+    "password": "1234"
+}
+
+###
+// logout user
+POST http://localhost:3000/logout
+Content-Type: application/json
+
+
+###
 // create category
 POST http://localhost:3000/category/
 Content-Type: application/json
 
 {
-    "name": "",
-    "userId": "93992a69-8836-4901-ba45-a1aea43bb1e8"
+    "name": "friends"
 }
 
 
@@ -26,25 +41,21 @@ Content-Type: application/json
 GET http://localhost:3000/category/
 Content-Type: application/json
 
-{
-    "userId": "93992a69-8836-4901-ba45-a1aea43bb1e8"
-}
-
 
 
 ###
 // update category
-PUT http://localhost:3000/category/2
+PUT http://localhost:3000/category/3
 Content-Type: application/json
 
 {
-    "newName": "jk"
+    "newName": "self"
 }
 
 
 ###
 // delete category
-DELETE http://localhost:3000/category/2
+DELETE http://localhost:3000/category/4
 Content-Type: application/json
 
 
@@ -67,10 +78,9 @@ Content-Type: application/json
 
 {
     "description": "hello my .. todo!",
-    "reminder": "2025-12-12 12:12:12",
-    "categoryId": "1",
-    "dueDate": "2025-12-12",
-    "userId": "93992a69-8836-4901-ba45-a1aea43bb1e8"
+    "reminder": "2024-12-12 12:12:12",
+    "categoryId": "2",
+    "dueDate": "2025-12-12"
 }
 
 
@@ -80,30 +90,26 @@ Content-Type: application/json
 GET http://localhost:3000/todo/
 Content-Type: application/json
 
-{
-    "userId": "93992a69-8836-4901-ba45-a1aea43bb1e8"
-}
-
 
 ###
 // get all todo of category
-GET http://localhost:3000/todo/3
+GET http://localhost:3000/todo/22
 Content-Type: application/json
 
 
 
 ###
 // update todo
-PUT http://localhost:3000/todo/13
+PUT http://localhost:3000/todo/1
 Content-Type: application/json
 
 {
-    "categoryId": 1
+    "categoryId": 24
 }
 
 
 ###
 // delete todo
-DELETE http://localhost:3000/todo/12
+DELETE http://localhost:3000/todo/1
 Content-Type: application/json
 

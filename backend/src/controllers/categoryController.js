@@ -3,17 +3,16 @@ import asyncHandler from 'express-async-handler'
 
 export const createCategory = asyncHandler(async (req, res) => {
   const name = req.body
-  // const userId = req.user.id;
+  const userId = req.user.id
   if (!name.name) {
     return res.status(400).json({ message: 'Name is required' })
   }
-  const category = await categoryModel.createCategory(name)
+  const category = await categoryModel.createCategory({ ...name, userId })
   res.status(201).json(category)
 })
 
 export const getCategories = asyncHandler(async (req, res) => {
-  // const userId = req.user.id;
-  const { userId } = req.body
+  const userId = req.user.id
   const categories = await categoryModel.getCategoriesByUserId(userId)
   res.status(200).json(categories)
 })
